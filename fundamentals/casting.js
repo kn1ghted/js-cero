@@ -47,3 +47,10 @@ console.log(numberValue + booleanValue); // SUMAR
 console.log(booleanValue + stringValue); // CONCATENAR
 console.log(booleanValue + numberValue); // SUMAR
 console.log(booleanValue + booleanValue); // SUMAR
+
+// QUIZ
+let number = '1234'
+let castedNumber = parseInt(number)
+
+console.log(typeof number)
+console.log(typeof castedNumber)
