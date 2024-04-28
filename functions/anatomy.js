@@ -45,7 +45,7 @@ function a(){
 // Note there is no name function!
 const a = function(){}
 
-// Functions running on object context
+// Functions running on object context - binded with CALL
 function a(){}
 const obj={}
 a.call(obj)
