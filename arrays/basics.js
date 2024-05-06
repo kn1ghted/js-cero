@@ -132,6 +132,68 @@ console.log(newFruits)
 const isArray = Array.isArray(fruits)
 console.log(isArray)
 
+// MAP - applies a function to all elements of an array
+// INMUTABILITY Creates a new array so it does not modified the original array
+const numbersMap = [1,2,3,4,5]
+const squaredNumbersMaps = numbersMap.map(num => num*num) // square functions
+console.log(numbersMap)
+console.log(squaredNumbersMaps)
+
+// Temperatures convertion excersise
+const temperaturesInFahrenheit=[32,68,95,104,212]
+const temperaturesInCelsius=temperaturesInFahrenheit.map(fahrenheit=>(5/9)*(fahrenheit-32))
+console.log('Temperatures In Fahrenheit: ',temperaturesInFahrenheit)
+console.log('Temperatures In Celsius: ',temperaturesInCelsius)
+
+// FOREACH - applies a function to each element of an array
+const colorsFor=['red','pink','blue']
+const iteratedColorsFor = colorsFor.forEach(color => console.log(color))
+console.log(colorsFor)
+console.log(iteratedColorsFor)
+
+const newNumbers=[1,2,3,4,5]
+let sumNewNumbers = 0
+newNumbers.forEach(number => {sumNewNumbers += number} )
+console.log('Array of Numbers: ',newNumbers)
+console.log('Sum of Numbers: ',sumNewNumbers)
+
+// REDUCE - reduce the elements of an array using an accumulator and looping over the current values - CASE 1
+const reducedNumers = newNumbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+console.log('Sum using reduce(): ', reducedNumers)
+
+// FILTER - also applies a function to each element, but the function is a condition to filter 
+// the elements that pass the condition defined by the function
+const numbersToFilter = [1,2,3,4,5,6,7,8,9,10]
+const filteredNumbers = numbersToFilter.filter(num => num % 2 === 0)
+console.log(numbersToFilter)
+console.log(filteredNumbers)
+
+// REDUCE - CASE 2
+const wordsToReduce = ['hello', 'word', 'drums', 'music', 'cymbals', 'home', 'hello', 'drums']
+const wordsFrecuency = wordsToReduce.reduce((accumulator, currentValue) => {
+    if (accumulator[currentValue]) {
+        accumulator[currentValue]++
+    } else {
+        accumulator[currentValue] = 1
+    }
+    // must return the accumulator to avoid syntax errors
+    return accumulator
+}, {})
+console.log(wordsToReduce)
+console.log(wordsFrecuency)
+
+// FIND - search an element inside an array
+// Return the first element that fulfills the condition given as a function
+const multiple5 = [0,5,10,15,20,25]
+const findFirstOver10 = multiple5.find(number => number > 10)
+console.log(multiple5)
+console.log('The first element greater than 10 is: ' + findFirstOver10)
+
+// FINDINDEX - return the index of an elements that fulfills the condition given by a function
+const index25 = multiple5.findIndex(num => num >= 25)
+console.log('The index of the first element greater than 25 is at index: ' + index25)
+
+
 // Loop iteration over array items
 const numbersArray = [1,2,3,4,5]
 let sum = 0
