@@ -34,7 +34,7 @@ function findElement (matrix, element) {
   return false
 }
 
-console.log(findElement(matrix, 5))
+console.log(findElement(matrix, 15))
 
 function duplicateMatrix (matrix) {
   let newMatrix = []
