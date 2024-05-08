@@ -132,7 +132,7 @@ console.log(newFruits)
 const isArray = Array.isArray(fruits)
 console.log(isArray)
 
-// MAP - applies a function to all elements of an array
+// map(f) - applies a function to all elements of an array
 // INMUTABILITY Creates a new array so it does not modified the original array
 const numbersMap = [1,2,3,4,5]
 const squaredNumbersMaps = numbersMap.map(num => num*num) // square functions
@@ -145,7 +145,7 @@ const temperaturesInCelsius=temperaturesInFahrenheit.map(fahrenheit=>(5/9)*(fahr
 console.log('Temperatures In Fahrenheit: ',temperaturesInFahrenheit)
 console.log('Temperatures In Celsius: ',temperaturesInCelsius)
 
-// FOREACH - applies a function to each element of an array
+// forEach(f) - applies a function to each element of an array
 const colorsFor=['red','pink','blue']
 const iteratedColorsFor = colorsFor.forEach(color => console.log(color))
 console.log(colorsFor)
@@ -157,18 +157,18 @@ newNumbers.forEach(number => {sumNewNumbers += number} )
 console.log('Array of Numbers: ',newNumbers)
 console.log('Sum of Numbers: ',sumNewNumbers)
 
-// REDUCE - reduce the elements of an array using an accumulator and looping over the current values - CASE 1
+// reduce(f) - reduce the elements of an array using an accumulator and looping over the current values - CASE 1
 const reducedNumers = newNumbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
 console.log('Sum using reduce(): ', reducedNumers)
 
-// FILTER - also applies a function to each element, but the function is a condition to filter 
+// filter(f) - also applies a function to each element, but the function is a condition to filter 
 // the elements that pass the condition defined by the function
 const numbersToFilter = [1,2,3,4,5,6,7,8,9,10]
 const filteredNumbers = numbersToFilter.filter(num => num % 2 === 0)
 console.log(numbersToFilter)
 console.log(filteredNumbers)
 
-// REDUCE - CASE 2
+// reduce(f) - CASE 2
 const wordsToReduce = ['hello', 'word', 'drums', 'music', 'cymbals', 'home', 'hello', 'drums']
 const wordsFrecuency = wordsToReduce.reduce((accumulator, currentValue) => {
     if (accumulator[currentValue]) {
@@ -182,22 +182,130 @@ const wordsFrecuency = wordsToReduce.reduce((accumulator, currentValue) => {
 console.log(wordsToReduce)
 console.log(wordsFrecuency)
 
-// FIND - search an element inside an array
+// find(f) - search an element inside an array
 // Return the first element that fulfills the condition given as a function
 const multiple5 = [0,5,10,15,20,25]
 const findFirstOver10 = multiple5.find(number => number > 10)
 console.log(multiple5)
 console.log('The first element greater than 10 is: ' + findFirstOver10)
 
-// FINDINDEX - return the index of an elements that fulfills the condition given by a function
+// findIndex(f) - return the index of an elements that fulfills the condition given by a function
 const index25 = multiple5.findIndex(num => num >= 25)
 console.log('The index of the first element greater than 25 is at index: ' + index25)
 
+// concat() - concatenates strings together
+const morseCode1 = ['....', '---'] // H O
+const morseCode2 = ['.-..', '.-'] // L A
+const morseCodeMessage = morseCode1.concat(morseCode2)
+const morseCodeMessage2 = [].concat(morseCode1, morseCode2)
+
+console.log('Morse first part: ',morseCode1)
+console.log('Morse second part: ',morseCode2)
+console.log('Morse message - option 1 ', morseCodeMessage)
+console.log('Morse message - option 2 ', morseCodeMessage2)
+
+// Combining strings using spread operator
+function combineMorseMessages (morseCode1, morseCode2) {
+    // Spread operator ...
+    console.log([...morseCode1, ...morseCode2])
+}
+  
+//combineMorseMessages(morseCode1, morseCode2)
+  
+const numbersSpread = [1, 2, 3]
+const stringSpread = 'string'   //this string will be spreaded as an array
+combineMorseMessages(numbersSpread, stringSpread)
+
+// join() - Agrega los elementos de un array a un string, usando el separador indicado en el parámetro. Regresa un string
+const morseCodeMessageString = morseCodeMessage.join('')
+
+console.log(morseCode1)
+console.log(morseCode2)
+console.log(morseCodeMessageString)
+console.log(typeof(morseCodeMessageString))
+
+// every(f) - returns true if all elements of the array fulfill the condition given by a function as argument
+const agesFamily = [13, 36, 37, 42, 46, 69, 70]
+const allAreAdults = agesFamily.every(age => age > 20)
+
+console.log(agesFamily)
+console.log('Are all members of the family adults over 20 years old: ',allAreAdults)
+
+// some(f) - returns true if at least one of elements of the array fulfill the condition given by a function as argument
+const atLeastOneIsChild = agesFamily.some(age => age < 12)
+const atLeastOneIsAdult = agesFamily.some(age => age > 18)
+
+console.log(agesFamily)
+console.log('Is at least one member of the family a child under 12 years old:', atLeastOneIsChild)
+console.log('Is at least one member of the family an adult:',atLeastOneIsAdult)
+
+// includes() - returns true if an element is included in the array
+const numbersEven = [2, 4, 6, 8, 5]
+
+const result1 = numbersEven.includes(3)
+console.log(result1)
+
+const result2 = numbersEven.includes(8)
+console.log(result2)
+
+// indexOf() - returns the index of an element if exists, -1 if not included
+const fruitsIndex = ['apple', 'cherry', 'grape', 'mango']
+
+const index1 = fruitsIndex.indexOf('grape')
+console.log(index1)
+
+const index2 = fruitsIndex.indexOf('blueberry')
+console.log(index2)
+
+// lastIndexOf() - returns the last index of an element if included several times, -1 if not included
+const numbersAgain = [2, 4, 6, 8, 10, 6]
+
+const lastIndex1 = numbersAgain.lastIndexOf(6)
+console.log(lastIndex1)
+
+const lastIndex2 = numbersAgain.lastIndexOf(3)
+console.log(lastIndex2)
+
+// Exercise 1 Findind Substring Indices
+const stringArray = ['apple', 'banana', 'orange', 'grape', 'banana', 'kiwi']
+const target = 'banana'
+
+function findStringIndicesInArray (array, target) {
+  const result = {
+    includesTargetString: false,
+    firstOccurrenceIndex: -1,
+    lastOccurrenceIndex: -1
+  }
+
+  array.forEach((element, index) => {
+    if (element.includes(target)) {
+      result.includesTargetString = true
+      result.firstOccurrenceIndex = array.indexOf(target)
+      result.lastOccurrenceIndex = array.lastIndexOf(target)
+    }
+  })
+
+  return result
+}
+
+const result = findStringIndicesInArray(stringArray, target)
+console.log(result)
+
+// slice()
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant', 'tiger']
+
+console.log('Original array ', animals)
+console.log('start param',animals.slice(2))
+console.log('start and end param',animals.slice(2, 3))
+console.log('start and end param',animals.slice(1, 6))
+console.log('negative param', animals.slice(-3))
+console.log('second negative param',animals.slice(2, -1))
+console.log('no param',animals.slice())
 
 // Loop iteration over array items
 const numbersArray = [1,2,3,4,5]
 let sum = 0
-for (let i=0;i<numbersArray.length;i++) {
+for (let i=0; i<numbersArray.length; i++) {
     sum+= numbersArray[i]
 }
 console.log(sum)
