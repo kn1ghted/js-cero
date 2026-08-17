@@ -1,4 +1,4 @@
-// Javascript comparisson operators
+// Javascript comparisons operators
 function absolute (a) {
     if (a < 0) {
         return -a
@@ -22,8 +22,8 @@ function notEquality (a,b){
     return a !== b
 }
 
-var number1 = 10
-var number2 = '10'
+let number1 = 10
+let number2 = '10'
 
 console.log (equalValue(number1,number2))
 console.log (equality(number1,number2))

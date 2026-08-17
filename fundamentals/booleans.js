@@ -5,21 +5,21 @@
 const isActive = true
 
 //2. has
-const hasPermisson = false
+const hasPermission = false
 
 // Implicit conversion (done by JS engine)
 const result = 5 > 3
-console.log(result)
+console.log('Result of 5 > 3: ' + result)
 
 const name = 'Platzi'
-console.log(!!name) //to verify if variable has an asigned values
+console.log('Variable has an assigned value: ' + !!name) //to verify if variable has an assigned values
 
 
 //Explicit conversion
 const value = 0
 const explicitBoolean = Boolean(value)
-console.log(explicitBoolean)
+console.log('Explicit boolean conversion of 0: ' + explicitBoolean)
 
 const otherValue = 24
 const explicitOtherBoolean = Boolean(otherValue)
-console.log(explicitOtherBoolean)
+console.log('Explicit boolean conversion of 24: ' + explicitOtherBoolean)

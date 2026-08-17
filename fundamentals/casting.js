@@ -1,4 +1,4 @@
-//! Explicit Type Casting
+// Explicit Type Casting
 
 const string = '42'
 const integer = parseInt(string)
