@@ -1,5 +1,12 @@
 // Logic operators
-
-console.log(true && true)
-console.log(true || false)
-console.log(!false)
+console.log('Compare values with logic operators')
+console.log('The value of true and true is ' + (true && true))
+console.log('The value of true and false is ' + (true && false))
+console.log('The value of false and true is ' + (false && true))
+console.log('The value of false and false is ' + (false && false))
+console.log('The value of true or true is ' + (true || true))
+console.log('The value of true or false is ' + (true || false))
+console.log('The value of false or true is ' + (false || true))
+console.log('The value of false or false is ' + (false || false))
+console.log('The value of not true is ' + (!true))
+console.log('The value of not false is ' + (!false))

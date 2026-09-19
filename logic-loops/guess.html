@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el número</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #172033;
+        }
+
+        body {
+            display: grid;
+            min-height: 100vh;
+            margin: 0;
+            place-items: center;
+        }
+
+        .game {
+            width: min(90%, 360px);
+            padding: 2rem;
+            border: 1px solid #d8e0ec;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 12px 30px #17203318;
+            text-align: center;
+        }
+
+        .game h1 {
+            margin-top: 0;
+        }
+
+        .game label,
+        .game input,
+        .game button {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .game input,
+        .game button {
+            margin-top: 0.75rem;
+            padding: 0.7rem;
+            border: 1px solid #b9c5d6;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        .game button {
+            border-color: #315efb;
+            background: #315efb;
+            color: white;
+            cursor: pointer;
+        }
+
+        .game button[type="button"] {
+            border-color: #68758a;
+            background: transparent;
+            color: #172033;
+        }
+
+        .hint {
+            min-height: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <main class="game">
+        <h1>Adivina el número</h1>
+        <p>Elige un número entre 1 y 10.</p>
+        <form id="guess-form">
+            <label for="guess-input">Tu número</label>
+            <input id="guess-input" type="number" min="1" max="10" required>
+            <button type="submit">Enviar intento</button>
+            <button id="cancel-button" type="button">Cancelar</button>
+        </form>
+        <p id="hint" class="hint" aria-live="polite">Tienes 3 intentos.</p>
+        <p id="attempts">Intentos restantes: 3</p>
+    </main>
+    <script src="guess.js"></script>
+    <!-- <script src="hangman.js"></script> -->
+</body>
+</html>

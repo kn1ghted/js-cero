@@ -1,14 +1,14 @@
 /* switch(expresion) {
   case valor1:
-     código a ejecutar
+    // código a ejecutar
     break;
   case valor2:
     // código a ejecutar
     break;
-  case valor1:
+  case valor3:
     // código a ejecutar
     break;
-  case valor2:
+  case valor4:
     // código a ejecutar
     break;
   default:
@@ -20,17 +20,17 @@ let expr = "Uvas";
 // SWITCH uses an strict comparisson === on the condition
 switch (expr) { 
   case "Naranjas":
-    console.log("Las naranjas cuestan $20 el kilo");
+    console.log("Las naranjas cuestan $2 el kilo");
     break;
   case "Manzanas":
-    console.log("Las manzanas cuestan $43 el kilo");
+    console.log("Las manzanas cuestan $4 el kilo");
     break;
   case "Plátanos":
-    console.log("El plátano esta en $30 el kilo");
+    console.log("El plátano esta en $1 el kilo");
     break;
   case "Mangos":
   case "Papayas":
-    console.log("Los mangos y las papayas cuestan $ 25 pesos el kilo");
+    console.log("Los mangos y las papayas cuestan $1 la unidad");
     break;
   default:
     console.log(`Lo siento, no contamos con ${expr}`);
