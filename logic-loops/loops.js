@@ -1,7 +1,7 @@
 /*
 FOR LOOP
- for (variable; condición; incremento) {
-   código a ejecutar
+ for (variable; condition; increment) {
+   execute code
  }
 */
 
@@ -13,7 +13,7 @@ for (let i = 0; i < list.length; i++) {
 /*
 FOR EACH LOOP
 array.forEach((item) => {
-  código a ejectura
+  execute code
 })
 
 */

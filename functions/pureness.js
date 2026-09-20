@@ -21,6 +21,8 @@ function addTen(x) {
 // Not pure functions
 function sum(a,b){
     console.log('A: ',a)
+    console.log('B: ',b)
+    console.log('Sum: ',a+b)
     return a+b
 }
 
